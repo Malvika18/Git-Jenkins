@@ -1,0 +1,86 @@
+pipeline {
+    agent any
+    stages {
+        stage("Clone Git Repository") {
+            steps {
+                git(
+                    url: "https://github.com/Malvika18/Flip-Book.git",
+                    branch: "master",
+                    changelog: true,
+                    poll: true
+                )
+            }
+        }
+        stage("Create artifacts or make changes") {
+            steps {
+                sh "cat update.xml"
+                sh  "yq -p=xml -o=json update.xml"
+                
+            }
+        }
+        stage("Push to Git Repository") {
+            steps {
+                withCredentials([gitUsernamePassword(credentialsId: 'ssboston-github-token', gitToolName: 'Default')]) {
+                    sh "git push -u origin master"
+                }
+                
+            }
+        }
+    }
+
+}
+
+
+    1  docker images
+    2  docker pull redis
+    3  dockerimages
+    4  docker images
+    5  docker ps
+    6  docker run redis
+    7  git config --global user.name "Neoite-malvika"
+    8  git config --global user.email malvika.bhargava@neosalpha.com
+    9  git config --list
+   10  mkdir git-data
+   11  ls
+   12  cd git-data
+   13  nano index.html
+   14  ls
+   15  git init
+   16  git add .
+   17  git ststus
+   18  git status
+   19  git commit -m "added index.html"
+   20  git remote add origin https://github.com/Neoite-malvika/greatlerningdevops_git-.git
+   21  git push -u origin main
+   22  git ststus
+   23  git status
+   24  git push origin master
+   25  git ststus
+   26  git status
+   27  nano index.html
+   28  git add .
+   29  git commit -m "changed index.html"
+   30  git push origin master
+   31  history
+   32  ls
+   33  git --version
+   34  ls
+   35  git config --global user.name "Malvika18"
+   36  git config --global user.email "malvika.bhargava2000@gmail.com"
+   37  git pull
+   38  git init
+   39  git add .
+   40  git commit -m "jenkinsfile commit"
+   41  git remote add origin https://github.com/Malvika18/Git-Jenkins.git
+   42  git push origin master
+   43  git remote set-url origin https://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@github.com/Malvika18/Git-Jenkins
+   44  ls
+   45  git add .
+   46  git push origin master
+   47  git checkout main
+   48  git merger master
+   49  git merge master
+   50  ls
+   51  git push origin main
+   52  git checkout main
+   53  history
