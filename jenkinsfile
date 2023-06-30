@@ -103,3 +103,98 @@ pipeline {
    14  sudo wget -qO /usr/local/bin/yq https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64
    15  sudo chmod a+x /usr/local/bin/yq
    16  yq --version
+
+
+///fetch the file from github and created an image through jenkins
+
+history
+    2  exit
+    3  yum update -y
+    4  yum install docker -y
+    5  which docker
+    6  docker -v
+    7  service docker status
+    8  docker info
+    9  service docker start
+   10  service docker status
+   11  docker info
+   12  clear
+   13  docker ps
+   14  docker ps -a
+   15  sudo yum update
+   16  sudo yum search docker
+   17  sudo yum info docker
+   18  sudo yum install docker
+   19  sudo systemctl status docker.service
+   20  sudo systemctl status docker.service
+   21  yum install git -y
+   22  git config --global user.name "Malvika18"
+   23  git config --global user.email "malvika.bhargava2000@gmail.com"
+   24  git clone https://github.com/Malvika18/Let-s-Travel.git
+   25  ls
+   26  cd Let-s-Travel
+   27  ls
+   28  mkdir direc
+   29  ls
+   30  cd direc
+   31  cd ..
+   32  ls
+   33  rm dirc
+   34  rm direc
+   35  ls
+   36  rmdir direc
+   37  ls
+   38  nano Dockerfile
+   39  ls
+   40  cd Dockerfile
+   41  ls
+   42  cat Dockerfile
+   43  docker build . -t my-website:latest
+   44  docker images
+   45  docker run -d -p 80:80 my-website:latest
+   46  docker ps
+   47  docker push bhargava18/jenkins_docker:git_to_docker
+   48  cd ..
+   49  docker login
+   50  docker login
+   51  docker images
+   52  docker tag firstImageTOHub bhargava18/my-website
+   53  docker tag latest bhargava18/my-website
+   54  docker push bhargava18/my-website
+   55  docker tag c9ca51ed03d2 bhargava18:80/my-website:mytag
+   56  docker push bhargava18:80/my-website:mytag
+   57  docker push bhargava18/my-website
+   58  docker image
+   59  docker images
+   60  docker push bhargava18/my-website:latest
+   61  docker tag my-website:s1 bhargava18/my-website:s1
+   62  docker tag my-website:latest bhargava18/my-website:latest
+   63  docker push bhargava18/my-website:latest
+   64  hsitory
+   65  history
+   66  ls
+   67  cd Let-s-Travel/
+   68  cat Dockerfile
+   69  history
+   70  docker run -d -p 80:80 my-website:latest
+   71  history
+   72  history
+   73  ls
+   74  cd Let-s-Travel/
+   75  ls
+   76  cat Dockerfile
+   77  docker images
+   78  hsitory
+   79  history
+   80  docker pull python
+   81  docker ps
+   82  docker ps -a
+   83  docker build my_container
+   84  docker run python
+   85  docker ps
+   86  docker ps -a
+   87  docker ps
+   88  docker start 537c8ab0d6cd
+   89  docker ps
+   90  history
+   91  docker images
