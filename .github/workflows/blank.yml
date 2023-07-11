@@ -1,5 +1,4 @@
-name: CI
-'on':
+on:
   push:
     branches:
       - main
@@ -7,19 +6,24 @@ name: CI
     branches:
       - main
   workflow_dispatch: null
+
 jobs:
   build:
     runs-on: ubuntu-latest
-    parameters:
-      - name: image
-        values: 13
     steps:
       - uses: actions/checkout@v3
       - name: Run a one-line script
         run: 'echo Hello, world!'
-      - name: Run the parrameterised value
-        run: 'echo this is the version ${{parameters.image}}'
+      - name: Run the parameterized value
+        run: 'echo this is the version ${{ github.event.inputs.image }}'
       - name: Run a multi-line script
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
+
+      # Define the workflow-level parameters here
+      # instead of within the build job
+  parameters:
+    image:
+      description: 'The version of the image'
+      default: '13'
